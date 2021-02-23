@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.shop.dao.ProductDao">
+	<sql id="productColumns">
+		p_id,
+		p_name,
+		img_index,
+		img_id,
+		size_id,
+		color_id,
+		ori_price,
+		price,
+		sold_num,
+		category
+	</sql>
+	<select id="queryAllProduct" resultType="Product">
+		select
+			<include refid="productColumns" />
+		from
+			product
+	</select>
+	<select id="queryPageProduct" resultType="Product">
+		select
+			<include refid="productColumns" />
+		from
+			product
+		limit
+			#{pageStart}, #{pageSize}
+	</select>
+	<select id="queryProductByCategory" resultType="Product">
+		select
+			<include refid="productColumns" />
+		from
+			product
+		where
+			category=#{category}
+	</select>
+	<select id="queryProductById" resultType="Product">
+		select
+			<include refid="productColumns" />
+		from
+			product
+		where
+			p_id=#{pId}
+	</select>
+	
+	<select id="queryImages" resultType="Images">
+		select id,img_id,img_name
+		from images
+		where img_id=#{imgId}
+	</select>
+	<select id="querySize" resultType="Size">
+		select id,size_id,size_name
+		from size
+		where size_id=#{sizeId}
+	</select>
+	<select id="queryColor" resultType="Color">
+		select id,color_id,color_name
+		from color
+		where color_id=#{colorId}
+	</select>
+</mapper>

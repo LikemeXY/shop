@@ -1,0 +1,619 @@
+body{
+	margin: 0 auto;
+    min-width: 320px;
+    max-width: 760px;
+    width: 100%;
+    font: 12px Microsoft YaHei;
+    color: #333;
+    text-align: left;
+}
+*{
+	margin: 0;
+	padding: 0;
+}
+img{
+	border: 0;
+}
+em{
+	font-style: normal;
+}
+.subbtn, .procontent, .comment, .comment li, h2 {
+    margin-bottom: 10px;
+}
+.wrapper, .h50, .search, .goodscat, .divide strong, .toolbar{
+	background: #FFFFFF;
+}
+.wrapper{
+	padding: 0 5px;
+    /*height: 100%;*/
+    background: #FFFFFF;
+}
+.search{
+	position: fixed;
+    left: 50%;
+    top: 0;
+    z-index: 999;
+    transform: translate(-50%,0);
+    max-width: 760px;
+    width: 100%;
+    height: 50px;
+    background: #FFFFFF;
+}
+.search form{
+	position: relative;
+    height: 20px;
+    margin: 5px;
+    padding: 10px 5px;
+    background: #F2F2F2
+}
+.search input{
+	float: left;
+	width: 100%;
+	height: 20px;
+	line-height: 20px;
+	background: #F2F2F2;
+	border: none;
+}
+.search button{
+	position: absolute;
+    top: 10px;
+    right: 0;
+    width: 40px;
+    height: 20px;
+    background: #F2F2F2;
+    border: none;
+    cursor: pointer;
+}
+.search .layui-icon{
+	font-size: 20px;
+    line-height: 20px;
+    color: #999;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.goodscat{
+	position: fixed;
+    left: 50%;
+    top: 50px;
+    z-index: 999;
+    transform: translate(-50%,0);
+    max-width: 750px;
+    width: 100%;
+}
+.layui-tab-card>.layui-tab-title{
+	margin: 0 5px;
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
+    background-color: #FFF;
+}
+.layui-tab-title{
+	position: relative;
+    left: 0;
+    height: 40px;
+    white-space: nowrap;
+    overflow: hidden;
+    font-size: 0
+}
+.layui-tab-card>.layui-tab-title li{
+	margin-right: -1px;
+    margin-left: -1px;
+}
+.layui-tab-title li{
+	position: relative;
+    display: inline-block;
+    *display: inline;
+    *zoom: 1;
+    vertical-align: middle;
+    padding: 0 10px;
+    font-size: 14px;
+    line-height: 40px;
+    color: #999;
+    text-align: center;
+}
+
+.h90{
+	height: 90px;
+}
+
+.recpro, .goodslist {
+    height: auto;
+    overflow: hidden;
+    padding-bottom: 15px;
+}
+
+
+.recpro dl, .goodslist dl {
+    float: left;
+    width: 19%;
+    height: auto;
+    padding: 10px 3%;
+}
+.goodslist dl {
+    width: 44%;
+}
+.recpro dt, .goodslist dt {
+    position: relative;
+    width: 100%;
+    height: 0;
+    padding-bottom: 100%;
+    background: url(../img/loading.gif) center no-repeat;
+}
+.recpro dt img, .goodslist dt img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+}
+.recpro dd.proname, .goodslist dd.proname {
+    display: block;
+    height: 20px;
+    padding-top: 10px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+.recpro dd.price, .goodslist dd.price {
+    font-size: 16px;
+    font-weight: 700;
+    color: #F50;
+}
+.price {
+    padding-top: 5px;
+}
+
+.recpro dd.price em, .goodslist dd.price em {
+    margin-right: 3px;
+    font-style: normal;
+}
+.goodslist dd.price span {
+    float: right;
+    font-size: 12px;
+    font-weight: 100;
+    color: #999;
+}
+
+.gotop{
+	position: fixed;
+	right: 10px;
+    bottom: 110px;
+    z-index: 999;
+    width: 38px;
+    height: auto;
+    overflow: hidden;
+}
+.gotop a{
+	/*display: block;*/
+	width: 36px;
+	height: 36px;
+}
+
+.toolbar{
+	position: fixed;
+    right: 0;
+    bottom: 0;
+    z-index: 101;
+    width: 100%;
+    height: 50px;
+    box-shadow: 0px -1px 8px #CCC;
+    background: #FFFFFF;
+}
+.toolbar li{
+	float: left;
+    width: 50%;
+    height: 36px;
+    padding: 7px 0;
+    font-size: 14px;
+    text-align: center;
+}
+.layui-badge-dot{
+	width: 8px;
+    height: 8px;
+    padding: 0;
+    border-radius: 50%;
+}
+
+/*----------------------购物车------------------------*/
+.noresult{
+	padding: 60px 0;
+	text-align: center;
+}
+a.r:link, a.r:visited, .red {
+    color: #F00;
+}
+.divide{
+	position: relative;
+    z-index: 100;
+    height: 20px;
+    margin: 20px 0 0;
+}
+.divide strong{
+	position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 80px;
+    height: 25px;
+    font-size: 14px;
+    text-align: center;
+}
+.copyright{
+	padding: 15px 0;
+    line-height: 1.8em;
+    text-align: center;
+    border-top: 1px solid #F2F2F2;
+}
+
+/*----------------------------detail--------------*/
+.layui-carousel {
+    position: relative;
+    left: 0;
+    top: 0;
+}
+.focusBox{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+.focusBox .pic{ 
+	position:relative;
+	z-index:0; 
+}
+.focusBox .pic img {
+	width:100%; 
+	height:750px;
+	display: block;
+}
+
+.layui-carousel-ind{
+	position: relative;
+    top: -35px;
+    width: 100%;
+    line-height: 0!important;
+    text-align: center;
+    font-size: 0;
+}
+.layui-carousel-ind .hd{
+	display: inline-block;
+    padding: 5px;
+    background-color: rgba(0,0,0,.2);
+    border-radius: 10px;
+    -webkit-transition-duration: .3s;
+    transition-duration: .3s;
+}
+.layui-carousel-ind li{
+	display: inline-block;
+    width: 10px;
+    height: 10px;
+    margin: 0 3px;
+    font-size: 14px;
+    /*background-color: #e2e2e2;*/
+    background-color: rgba(255,255,255,.5);
+    border-radius: 50%;
+    cursor: pointer;
+    -webkit-transition-duration: .3s;
+    transition-duration: .3s;
+}
+.layui-carousel-ind .hd .on{
+	background-color:#FFFFFF;
+}
+
+.pricediv {
+    height: 50px;
+    background: #F2F2F2;
+}
+.saleprice, .gotobtn, .orderbtn, .querybtn {
+    background: #FF00CC;
+}
+.saleprice {
+    float: left;
+    width: 100%;
+    height: 50px;
+}
+.saleprice strong {
+    float: left;
+    height: 50px;
+    margin: 0 20px;
+    font-size: 30px;
+    line-height: 50px;
+    color: #FF0;
+}
+.saleprice strong em {
+    margin-right: 5px;
+    font-size: 18px;
+}
+.saleprice span {
+    display: block;
+    float: left;
+    height: 32px;
+    padding: 9px 0;
+    margin-left: 40px;
+}
+.saleprice span p {
+    height: 16px;
+    color: #FFF;
+    line-height: 16px;
+}
+.title {
+    padding: 10px;
+    font-size: 20px;
+    color: #000;
+    line-height: 1.8em;
+}
+.service{
+    height: 36px;
+    color: #666;
+}
+.service li{
+    float: left;
+    width: 25%;
+    height: 45px;
+    font-size: 14px;
+    line-height: 45px;
+    text-align: center;
+}
+.i-ser{
+    margin-right: 5px;
+    font-size: 30px;
+    color: #CCC;
+}
+.subbtn button {
+    width: 100%;
+    height: 45px;
+    font-size: 16px;
+}
+.subbtn .time{
+	margin-right: 10px;
+	width: 20px;
+	height: 20px;
+}
+
+h2 {
+    padding: 0 10px;
+    height: 36px;
+    line-height: 36px;
+    font-size: 14px;
+    font-weight: 700;
+    color: #4C4C4C;
+    border-left: 5px solid;
+    border-color: #C00;
+    background: #F2F2F2;
+}
+
+.layui-form {
+    font-size: 14px;
+}
+.layui-form-item {
+    margin-bottom: 10px;
+    clear: both;
+    *zoom: 1;
+}
+.layui-form-label {
+    width: 70px;
+    padding: 9px 15px 9px 0px;
+}
+.layui-input-block {
+    margin-left: 85px;
+}
+.total {
+    padding-top: 7px;
+}
+.total > a {
+    display: block;
+    float: left;
+    width: 26px;
+    height: 26px;
+    font-size: 16px;
+    text-align: center;
+    background: #F2F2F2;
+    border: 1px solid #E6E6E6;
+    cursor: pointer;
+}
+.total > a.dec {
+    border-top-left-radius: 4px;
+    border-bottom-left-radius: 4px;
+    font-size: 12px;
+    line-height: 23px;
+    
+}
+.total > a.inc {
+    border-top-right-radius: 4px;
+    border-bottom-right-radius: 4px;
+    font-size: 16px;
+    line-height: 23px;
+}
+
+.total input.total-input {
+    float: left;
+    width: 50px;
+    height: 28px;
+    padding: 0;
+    line-height: 28px;
+    text-align: center;
+    border-width: 1px 0;
+    border-radius: 0;
+}
+.price {
+    padding-top: 5px;
+}
+.price strong {
+    height: 26px;
+    font: 28px/26px Tahoma;
+    font-weight: 600;
+    color: #F40;
+}
+.price strong em.rmb {
+    font: 20px arial;
+    font-weight: 400;
+    margin-right: 5px;
+}
+.price strong .showprice{
+	margin-left: 8px;
+	display: inline-block;
+}
+.price strong .showinfo {
+    margin-left: 8px;
+    display: none;
+}
+
+select{
+	font-family: inherit;
+	text-transform: none;
+}
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
+    display: inline-block;
+    max-width: 100%;
+    font-weight: bold;
+}
+.form-control {
+    height: 34px;
+    padding: 6px 12px;
+    font-size: 14px;
+    line-height: 1.42857143;
+    color: #555;
+    background-color: #fff;
+    background-image: none;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+    transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+}
+/*@media (min-width: 25px)*/
+.form-inline .form-group {
+    display: inline-block;
+    margin-bottom: 0;
+    vertical-align: middle;
+    margin-right: 30px;
+}
+
+
+/*@media (min-width: 768px)*/
+.form-inline .form-control {
+    display: inline-block;
+    width: auto;
+    vertical-align: middle;
+}
+
+.payment {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+.payment li {
+    width: 130px;
+    height: 44px;
+    margin: 0 8px 8px 0;
+}
+.payment li a {
+    display: block;
+    width: 120px;
+    height: 36px;
+    padding: 4px;
+    border: 1px solid #E6E6E6;
+}
+.payment li a.cur-pay {
+    border: 2px solid #F90;
+    padding: 3px;
+}
+.cmntbtn, .orderbtn {
+    width: 100%;
+}
+
+.orderbtn {
+    height: 45px;
+    font-size: 16px;
+}
+
+.orderbar {
+    position: fixed;
+    left: 50%;
+    bottom: 0;
+    transform: translate(-50%,0);
+    width: 100%;
+    height: 50px;
+    background: #F2F2F2;
+    box-shadow: 0px -1px 8px #CCC;
+}
+.orderbar li {
+    float: left;
+    height: 36px;
+    padding: 7px 0;
+    font-size: 14px;
+    text-align: center;
+}
+.orderbar li.a {
+    width: 12%;
+}
+.orderbar li.b {
+    width: 18%;
+}
+.orderbar li.c {
+    width: 35%;
+    line-height: 36px;
+    background: #F93;
+}
+
+.orderbar li.d {
+    width: 35%;
+    line-height: 36px;
+    background: #F63;
+}
+
+
+/*-------------------------shopcart------------------*/
+h1 {
+    padding: 15px 0;
+    font-size: 28px;
+    font-weight: 400;
+    text-align: center;
+}
+.carttotal {
+    position: fixed;
+    right: 0;
+    bottom: 51px;
+    z-index: 101;
+    width: 100%;
+    height: 45px;
+    line-height: 45px;
+    text-align: right;
+    vertical-align: middle;
+    background: #F2F2F2;
+}
+.carttotal a {
+    display: block;
+    float: right;
+    width: 120px;
+    height: 45px;
+    margin-left: 20px;
+    text-align: center;
+    background: #F63;
+}
+.layui-form-label {
+    width: 70px;
+    padding: 9px 15px 9px 0px;
+}
+.frame li {
+    display: inline-block;
+    margin: 3px 5px 5px 0;
+}
+.frame li a {
+    display: inline-block;
+    width: auto;
+    height: auto;
+    border: 1px solid #E6E6E6;
+    border-radius: 2px;
+}
+.frame li a.txta {
+    padding: 3px 8px;
+}

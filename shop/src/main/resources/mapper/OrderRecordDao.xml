@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.shop.dao.OrderRecordDao">
+	<insert id="saveOrderRecord" parameterType="OrderRecord">
+		insert into orderrecord (order_no,p_id,p_name,size,color,price,total_price,number,name,phone,location,address,message,pay_method,status,time)
+		values(#{orderNo},#{pId},#{pName},#{size},#{color},#{price},#{totalPrice},#{number},#{name},#{phone},#{location},#{address},#{message},#{payMethod},#{status},#{time})
+	</insert>
+	
+	<select id="queryOrderRecord" resultType="OrderRecord">
+		select order_no,p_id,p_name,size,color,price,total_price,number,name,phone,location,address,message,pay_method,status,time
+		from orderrecord
+		where order_no = #{orderNo}
+	</select>
+	<select id="queryOrderRecordList" resultType="OrderRecord">
+		select
+			order_no,p_id,p_name,size,color,price,total_price,number,name,phone,location,address,message,pay_method,status,time
+		from
+			orderrecord
+	</select>
+	<select id="queryOrderRecordCount" resultType="OrderRecord">
+		select
+			order_no,p_id,p_name,size,color,price,total_price,number,name,phone,location,address,message,pay_method,status,time
+		from
+			orderrecord
+		where
+			status = 1
+		limit
+			#{start},#{count}
+	</select>
+	
+	<update id="updateOrderRecord" parameterType="OrderRecord">
+		update orderrecord
+		set status = 1,time=#{time}
+		where order_no = #{orderNo}
+	</update>
+</mapper>

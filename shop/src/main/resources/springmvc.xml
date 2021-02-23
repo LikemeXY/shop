@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:mvc="http://www.springframework.org/schema/mvc"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+		http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/mvc
+		http://www.springframework.org/schema/mvc/spring-mvc.xsd
+		http://www.springframework.org/schema/context 
+		http://www.springframework.org/schema/context/spring-context.xsd">
+	
+
+	<!-- 配置创建 spring 容器要扫描的包 -->
+	<context:component-scan base-package="com.shop">
+		<!-- 制定扫包规则 ,只扫描使用@Controller 注解的 JAVA 类 -->
+		<context:include-filter type="annotation" expression="org.springframework.stereotype.Controller" />
+	</context:component-scan>
+	 
+	<!--开启SpringMVC注解的支持-->
+	<mvc:annotation-driven/>
+	 
+	<!-- 配置视图解析器 -->
+	<bean id="internalResourceViewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+		<property name="prefix" value="/WEB-INF/views/"/>
+		<property name="suffix" value=".jsp"/>
+	</bean>
+	
+	<mvc:view-controller path="/" view-name="redirect:index" />
+	 
+	<!-- 静态资源映射 -->
+    <mvc:resources mapping="/static/**" location="/static/" cache-period="31536000"/>
+
+	<!-- 拦截器配置 -->
+    <mvc:interceptors>
+        <mvc:interceptor>
+            <mvc:mapping path="/adminMain"/>
+            <mvc:exclude-mapping path="/static/**" />
+            <bean class="com.shop.interceptor.LoginInterceptor" />
+        </mvc:interceptor>
+    </mvc:interceptors>
+	
+		
+	<!--文件上传相关-->   
+	<bean id = "multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+		<property name="defaultEncoding" value="utf-8"/>
+	</bean>
+
+</beans>
